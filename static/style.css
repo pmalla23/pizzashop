@@ -1,0 +1,87 @@
+input[type="button"]:hover {
+  background-color: pink;
+}
+
+input[type="radio"]:hover {
+  background-color: orange;
+}
+
+table,
+td,
+th {
+  border: 1px solid green;
+  border-collapse: collapse;
+  padding: 1%;
+  text-align: center;
+  width: 40%;
+}
+
+table#ordersTable {
+  width: 50%;
+}
+table#cartTable {
+  width: 50%;
+}
+.center-me {
+  margin: 0 auto;
+}
+
+body {
+  background-color: black !important;
+  color: white !important;
+}
+h1 {
+  text-align: center;
+}
+br {
+  margin: 2%;
+}
+.order_box {
+  margin: 2% 25%;
+  border: 1px solid green;
+  padding: 1%;
+}
+hr {
+  border-color: green;
+}
+label {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-right: 40%;
+}
+select {
+  color: black !important;
+}
+#cart_box {
+  display: flex;
+  margin: 1% 25%;
+}
+button {
+  flex: 1;
+  background-color: white;
+  color: black !important;
+}
+.pizza {
+  border: 1px solid green;
+  margin: 1%;
+  padding: 2%;
+}
+
+#quantity {
+  color: black !important;
+  margin: 0% 5%;
+}
+
+.modal-content {
+  background-color: black !important;
+  border: 1px solid green;
+}
+input {
+  color: black !important;
+}
+#ordersummary {
+  border: 1px solid green;
+  margin: 2% 10%;
+  padding: 1% 3%;
+  text-align: center;
+}

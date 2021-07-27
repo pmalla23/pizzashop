@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Awesome Pizza</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+	<script src="https://kit.fontawesome.com/afb9a536f5.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	  <!-- <link rel="stylesheet" href="../static/style.css" /> -->
+</head>
+
+<body>
+
+	<h1> Welcome to Awesome Pizza! </h1>
+	
+		<!-- Customer information -->
+    
+			<br/> <br/>
+
+			<!-- Order information -->
+			<!-- Type of pizza -->
+
+			<div class="order_box">
+    		<h3> Please select the kind of pizza you want today along with quantity and size. </h3> <hr>
+				<form id="pizzaTypeForm">
+					<div class="pizza">
+					<label name="pizzaType" value="Cheese Pizza">Cheese</label>
+					<br>
+					<label >Quantity</label>  
+						<input id="quantityCheese" type="number" min="0" size="3" value="0"/>
+						<br>
+						<label >Size</label> 
+						<select id="sizeCheese">
+							<option name="pizzaSize" value="Small">Small</option>
+							<option name="pizzaSize" value="Medium">Medium</option>
+							<option name="pizzaSize" value="Large">Large</option>
+						</select>	
+					</div>
+					<hr>
+					<div class="pizza">
+					<label name="pizzaType" value="Pepperoni Pizza">Pepperoni</label>
+					<br>
+					<label >Quantity</label> 
+						<input id="quantityPepperoni" type="number" min="0" size="3" value="0"/>
+						<br>
+						<label >Size</label> 
+						<select id="sizePepperoni">
+							<option name="pizzaSize" value="Small">Small</option>
+							<option name="pizzaSize" value="Medium">Medium</option>
+							<option name="pizzaSize" value="Large">Large</option>
+						</select>
+					</div>
+					<hr>
+					<div class="pizza">
+					<label  name="pizzaType" value="Chicken Pizza">Chicken</label>
+					<br>
+					<label >Quantity</label> 
+						<input id="quantityChicken" type="number" min="0" size="3" value="0"/>
+						<br>
+						<label >Size</label> 
+						<select id="sizeChicken">
+							<option name="pizzaSize" value="Small">Small</option>
+							<option name="pizzaSize" value="Medium">Medium</option>
+							<option name="pizzaSize" value="Large">Large</option>
+						</select>
+					</div>
+			</div>
+		</form>
+		<div id="cart_box">
+			<button type="submit" id="submitCart" ><i class="fas fa-shopping-cart"> Add to Cart</i></button>
+			<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i class="fas fa-shopping-cart"> View Cart</i></button>
+		</div>
+			<!-- Use of bootstrap is just to use the Modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"> <i class="fas fa-shopping-cart"> Your Cart</i></h4>
+        </div>
+        <div class="modal-body">
+			<h3>Pizzas you have in cart</h3>
+			<hr>
+			<table id ="cart_table" class="center-me">
+				<thead>
+					<tr>
+							<th> Type </th> <th> Size </th> <th>Count</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+	
+			</table>
+			<hr>
+			<p><form id="orderForm">
+				<div>
+				<h3> Enter customer information to place order. </h3>
+					<hr>
+				<label id="firstNameLabel" for="firstNameInput">First name: </label>
+				<input id="firstNameInput" name="firstName" type="text" required></input>
+				<br/> <br/>
+			
+				<label id="lastNameLabel" for="lastNameInput">Last name: </label>
+				<input id="lastNameInput" name="lastName" type="text" required></input>
+				</div>
+			</p>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-default" id="submitButton" data-dismiss="modal">Submit Order</button>	
+			</form>
+			
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+   		<br/>
+
+		<!-- Shows order summary -->
+		<div id="ordersummary">
+		<h3> Your orders will be displayed here! </h3>
+		<p id="confirmation"> </p>
+		<table id ="ordersTable" class="center-me">
+			<thead>
+				<tr>
+		
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+
+		</table>
+		<h3> JSON sent to server will be displayed here!</h3>
+		<p id = "rawJson"> </p>
+
+	<div id="response">
+		<h3> JSON received from the server will display here!</h3>
+		<p id="customer"></p>
+		<p id="orderid"></p>
+		<p id="status"></p>
+		<p id="details"></p>
+		<p id="chicken"></p>
+		<p id="pepperoni"></p>
+		<p id="cheese"></p>
+		</div>
+		
+
+		
+	</div>
+		<!-- Code for displaying order summary -->
+		<script type="text/javascript" src="{{url_for('static', filename='place_order.js')}}"></script>
+		<!-- <script src="../static/place_order.js"></script> -->
+
+
+</body>
+
+</html>

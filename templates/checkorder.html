@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head><Title>Check Order</Title></head>
+    <body>
+        {% if order=="error" %}
+        <p>Order not found.</p>
+        {% else %}
+        <p>Customer: {{order[0][0]}} {{order[0][1]}}</p>
+        <p>Order ID: {{order[0][2]}}</p>
+        <p>Status: {{order[0][3]}}</p>
+        <p>Order Details:</p>
+        <p>1. {{order[0][4]}} pizzas.</p>
+        <p>2. {{order[0][5]}} pizzas.</p>
+        <p>3. {{order[0][6]}} pizzas.</p>
+        {% endif %}
+    </body>
+</html>
